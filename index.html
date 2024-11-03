@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>Arma tu PC</title>
+</head>
+<body>
+
+    <!-- Contenedor inicial con carrusel -->
+    <div id="inicio" class="image-container">
+        <!-- Imagen principal -->
+        <img src="gabinet2.jpeg" alt="gabinete">
+
+        <!-- Botón sobre la imagen -->
+        <button id="empezar-btn" onclick="empezar()">Arma tu pc</button>
+
+        <!-- Carrusel de imágenes sobre la imagen de gabinete -->
+        <div class="carousel-container">
+            <img src="gamer.png" alt="Imagen 1" class="active">
+            <img src="perifericos.png" alt="Imagen 2">
+            <img src="procesador.png" alt="Imagen 3">
+        </div>
+    </div>
+
+    <!-- Sección que aparece al presionar "Empezar" -->
+    <!-- Sección que aparece al presionar "Empezar" -->
+<div id="pregunta-uso" class="hidden">
+    <h2>¿Qué uso le darías a tu PC?</h2>
+    <button class="opcion-uso" onclick="seleccionarUso('Gamer')">Gamer</button>
+    <button class="opcion-uso" onclick="seleccionarUso('Office')">Office</button>
+    <button class="opcion-uso" onclick="seleccionarUso('Diseño')">Diseño</button>
+    <button class="opcion-uso" onclick="seleccionarUso('School')">School</button>
+    <!-- Botón para volver al carrusel -->
+    <button id="volver-carrusel-btn" onclick="volverAlCarrusel()">Volver</button>
+</div>
+
+    <div id="preguntas1" class="estilosPreguntas">
+            <!-- Secciones para cada opción -->
+            <div id="gamer-section" class="hidden section-option">
+                <h2>Configuración para Gamer</h2>
+                <p>Aquí puedes configurar tu PC para gaming.</p>
+                
+                <!-- Contenedor de imágenes y precios en gamer-section -->
+                <div class="item-container">
+                    <div class="item" onclick="seleccionarItem(this, 100)">
+                        <img src="Ryzen9500.png" alt="Producto 1">
+                        <p class="nombre">Producto 1</p>
+                        <p class="precio">$100</p>
+                    </div>
+                    <div class="item" onclick="seleccionarItem(this, 200)">
+                        <img src="Ryzen9500.png" alt="Producto 2">
+                        <p class="nombre">Producto 2</p>
+                        <p class="precio">$200</p>
+                    </div>
+                    <!-- Agrega más items aquí -->
+                </div>
+            
+                <!-- Mostrar precio total en gamer-section -->
+                <p id="precio-gamer-total">Precio total: $0</p>
+            
+                <!-- Botones de navegación -->
+          
+                <button id="volver-btn" onclick="volver()">Atrás</button>
+                <button id="siguiente-btn" onclick="irAConfiguracionAdicional()">Siguiente</button>
+            </div>
+            
+            <!-- Nueva sección para configuración adicional -->
+            <div id="configuracion-adicional-section" class="hidden section-option">
+                <h2>Configuración Adicional</h2>
+                <p>Elige elementos adicionales para tu configuración de PC.</p>
+            
+                <div class="item-container">
+                    <div class="item" onclick="seleccionarItemAdicional(this, 50)">
+                        <img src="mother.png" alt="Producto 3">
+                        <p class="nombre">Producto 3</p>
+                        <p class="precio">$50</p>
+                    </div>
+                    <div class="item" onclick="seleccionarItemAdicional(this, 150)">
+                        <img src="imagen4.jpg" alt="Producto 4">
+                        <p class="nombre">Producto 4</p>
+                        <p class="precio">$150</p>
+                    </div>
+                    <!-- Agrega más items aquí -->
+                </div>
+            
+                <!-- Mostrar precio total en configuracion-adicional-section -->
+                <p id="precio-total">Precio total: $0</p>
+            
+                <!-- Botones de navegación -->
+                <button id="volver-btn" onclick="volverAGamer()">Atrás</button>
+                <button id="siguiente-btn" onclick="finalizarConfiguracion()">Siguiente</button>
+            </div>
+            
+            
+
+            <div id="office-section" class="hidden section-option">
+                <h2>Configuración para Office</h2>
+                <p>Aquí puedes configurar tu PC para oficina.</p>
+                <button id="volver-btn" onclick="volver()">Atras</button>
+            </div>
+
+            <div id="diseno-section" class="hidden section-option">
+                <h2>Configuración para Diseño</h2>
+                <p>Aquí puedes configurar tu PC para diseño gráfico.</p>
+                <button id="volver-btn" onclick="volver()">Atras</button>
+            </div>
+
+            <div id="school-section" class="hidden section-option">
+                <h2>Configuración para School</h2>
+                <p>Aquí puedes configurar tu PC para uso escolar.</p>
+                <button id="volver-btn" onclick="volver()">Atras</button>
+            </div>
+         
+        </div>
+
+    <footer>
+        <p>&copy; 2024 Need IT. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="java.js"></script>
+</body>
+</html>
