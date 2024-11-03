@@ -13,12 +13,18 @@ body {
     display: inline-block;
     width: 100%;
     max-width: 1340px;
+    height: 100vh; /* Asegura que ocupe toda la altura de la ventana */
+    background-size: cover; /* Escala la imagen para cubrir el contenedor */
+    background-position: center; /* Centra la imagen */
 }
+
 
 /* Imagen principal */
 .image-container img {
     width: 100%;
     height: auto;
+    max-height: 100vh;
+    object-fit: cover;
 }
 
 /* Botón sobre la imagen */
