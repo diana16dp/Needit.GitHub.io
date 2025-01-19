@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="css.css">
+    <title>Arma tu PC</title>
+</head>
+<body>
+    <!-- Contenedor inicial con carrusel -->
+    <div id="inicio" class="image-container" style="background-image: url('gabinet2.jpeg');">
+        <button id="empezar-btn" onclick="empezar()">Arma tu pc</button>
+        <div class="carousel-container">
+            <img src="gamer.png" alt="Imagen 1" class="active">
+            <img src="perifericos.png" alt="Imagen 2">
+            <img src="procesador.png" alt="Imagen 3">
+        </div>
+    </div>
+
+    <!-- Sección de pregunta inicial -->
+    <div id="pregunta-uso" class="hidden">
+        <h2>¿Qué uso le darías a tu PC?</h2>
+        <button class="opcion-uso" onclick="seleccionarUso('Gamer')">Gamer</button>
+        <button class="opcion-uso" onclick="seleccionarUso('Office')">Office</button>
+        <button class="opcion-uso" onclick="seleccionarUso('Diseño')">Diseño</button>
+        <button class="opcion-uso" onclick="seleccionarUso('School')">School</button>
+        <button id="volver-carrusel-btn" onclick="volverAlCarrusel()">Volver</button>
+    </div>
+
+    <!-- Sección Gamer -->
+    <div id="gamer-section" class="hidden section-option">
+        <h2>Configuración para Gamer</h2>
+        <p>Selecciona el fabricante de procesadores para continuar:</p>
+        <div class="button-container">
+            <button class="processor-button" onclick="seleccionarFabricante('Intel')">Intel</button>
+            <button class="processor-button" onclick="seleccionarFabricante('AMD')">AMD</button>
+        </div>
+    </div>
+
+    <!-- Subcategorías de Intel -->
+    <div id="intel-section" class="hidden section-option">
+        <h2>Configuración para Intel</h2>
+        <div id="gamer-subsection-1" class="gamer-subsection">
+            <h3>Procesadores Intel</h3>
+            <div class="item-container">
+                <div class="item" onclick="seleccionarItem(this, 150)">
+                    <img src="IntelCorei5.png" alt="Procesador Intel 1">
+                    <p class="nombre">Intel Core i5</p>
+                    <p class="precio">$150</p>
+                </div>
+                <div class="item" onclick="seleccionarItem(this, 250)">
+                    <img src="IntelCorei7.png" alt="Procesador Intel 2">
+                    <p class="nombre">Intel Core i7</p>
+                    <p class="precio">$250</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="gamer-subsection-2" class="gamer-subsection hidden">
+            <h3>Placa madre Intel</h3>
+            <div class="item-container">
+                <div class="item" onclick="seleccionarItem(this, 100)">
+                    <img src="placa_madre_intel.png" alt="Placa madre Intel">
+                    <p class="nombre">Placa madre Intel</p>
+                    <p class="precio">$100</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="gamer-subsection-3" class="gamer-subsection hidden">
+            <h3>Memoria RAM</h3>
+            <div class="item-container">
+                <div class="item" onclick="seleccionarItem(this, 80)">
+                    <img src="ram_intel.png" alt="Memoria RAM Intel">
+                    <p class="nombre">Memoria RAM 8GB</p>
+                    <p class="precio">$80</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="gamer-subsection-4" class="gamer-subsection hidden">
+            <h3>Cooler CPU</h3>
+            <div class="item-container">
+                <div class="item" onclick="seleccionarItem(this, 50)">
+                    <img src="cooler_intel.png" alt="Cooler Intel">
+                    <p class="nombre">Cooler Intel</p>
+                    <p class="precio">$50</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="gamer-subsection-5" class="gamer-subsection hidden">
+            <h3>Placa de Video</h3>
+            <div class="item-container">
+                <div class="item" onclick="seleccionarItem(this, 300)">
+                    <img src="gpu_intel.png" alt="Placa de Video Intel">
+                    <p class="nombre">Placa de Video Intel</p>
+                    <p class="precio">$300</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="gamer-subsection-6" class="gamer-subsection hidden">
+            <h3>Disco</h3>
+            <div class="item-container">
+                <div class="item" onclick="seleccionarItem(this, 100)">
+                    <img src="disco_intel.png" alt="Disco Intel">
+                    <p class="nombre">Disco Intel 1TB</p>
+                    <p class="precio">$100</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="gamer-subsection-7" class="gamer-subsection hidden">
+            <h3>Fuente</h3>
+            <div class="item-container">
+                <div class="item" onclick="seleccionarItem(this, 70)">
+                    <img src="fuente_intel.png" alt="Fuente Intel">
+                    <p class="nombre">Fuente Intel</p>
+                    <p class="precio">$70</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="gamer-subsection-8" class="gamer-subsection hidden">
+            <h3>Gabinete</h3>
+            <div class="item-container">
+                <div class="item" onclick="seleccionarItem(this, 90)">
+                    <img src="gabinete_intel.png" alt="Gabinete Intel">
+                    <p class="nombre">Gabinete Intel</p>
+                    <p class="precio">$90</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="gamer-subsection-9" class="gamer-subsection hidden">
+            <h3>Monitor</h3>
+            <div class="item-container">
+                <div class="item" onclick="seleccionarItem(this, 200)">
+                    <img src="monitor_intel.png" alt="Monitor Intel">
+                    <p class="nombre">Monitor Intel</p>
+                    <p class="precio">$200</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="gamer-subsection-10" class="gamer-subsection hidden">
+            <h3>Periféricos</h3>
+            <div class="item-container">
+                <div class="item" onclick="seleccionarItem(this, 150)">
+                    <img src="periferico_intel.png" alt="Periféricos Intel">
+                    <p class="nombre">Periféricos Intel</p>
+                    <p class="precio">$150</p>
+                </div>
+            </div>
+        </div>
+
+        <button id="volver-btn" onclick="mostrarSubcategoriaAnterior()">Atrás</button>
+        <button id="siguiente-btn" onclick="mostrarSiguienteSubcategoria()">Siguiente</button>
+    </div>
+
+    <!-- Subcategorías de AMD -->
+    <div id="amd-section" class="hidden section-option">
+        <h2>Configuración para AMD</h2>
+        <div id="gamer-subsection-1" class="gamer-subsection">
+            <h3>Procesadores AMD</h3>
+            <div class="item-container">
+                <div class="item" onclick="seleccionarItem(this, 140)">
+                    <img src="AMDRyzen5.png" alt="Procesador AMD 1">
+                    <p class="nombre">AMD Ryzen 5</p>
+                    <p class="precio">$140</p>
+                </div>
+                <div class="item" onclick="seleccionarItem(this, 240)">
+                    <img src="AMDRyzen7.png" alt="Procesador AMD 2">
+                    <p class="nombre">AMD Ryzen 7</p>
+                    <p class="precio">$240</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="gamer-subsection-2" class="gamer-subsection hidden">
+            <h3>Placa madre Intel</h3>
+            <div class="item-container">
+                <div class="item" onclick="seleccionarItem(this, 100)">
+                    <img src="placa_madre_intel.png" alt="Placa madre Intel">
+                    <p class="nombre">Placa madre Intel</p>
+                    <p class="precio">$100</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="gamer-subsection-3" class="gamer-subsection hidden">
+            <h3>Memoria RAM</h3>
+            <div class="item-container">
+                <div class="item" onclick="seleccionarItem(this, 80)">
+                    <img src="ram_intel.png" alt="Memoria RAM Intel">
+                    <p class="nombre">Memoria RAM 8GB</p>
+                    <p class="precio">$80</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="gamer-subsection-4" class="gamer-subsection hidden">
+            <h3>Cooler CPU</h3>
+            <div class="item-container">
+                <div class="item" onclick="seleccionarItem(this, 50)">
+                    <img src="cooler_intel.png" alt="Cooler Intel">
+                    <p class="nombre">Cooler Intel</p>
+                    <p class="precio">$50</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="gamer-subsection-5" class="gamer-subsection hidden">
+            <h3>Placa de Video</h3>
+            <div class="item-container">
+                <div class="item" onclick="seleccionarItem(this, 300)">
+                    <img src="gpu_intel.png" alt="Placa de Video Intel">
+                    <p class="nombre">Placa de Video Intel</p>
+                    <p class="precio">$300</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="gamer-subsection-6" class="gamer-subsection hidden">
+            <h3>Disco</h3>
+            <div class="item-container">
+                <div class="item" onclick="seleccionarItem(this, 100)">
+                    <img src="disco_intel.png" alt="Disco Intel">
+                    <p class="nombre">Disco Intel 1TB</p>
+                    <p class="precio">$100</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="gamer-subsection-7" class="gamer-subsection hidden">
+            <h3>Fuente</h3>
+            <div class="item-container">
+                <div class="item" onclick="seleccionarItem(this, 70)">
+                    <img src="fuente_intel.png" alt="Fuente Intel">
+                    <p class="nombre">Fuente Intel</p>
+                    <p class="precio">$70</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="gamer-subsection-8" class="gamer-subsection hidden">
+            <h3>Gabinete</h3>
+            <div class="item-container">
+                <div class="item" onclick="seleccionarItem(this, 90)">
+                    <img src="gabinete_intel.png" alt="Gabinete Intel">
+                    <p class="nombre">Gabinete Intel</p>
+                    <p class="precio">$90</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="gamer-subsection-9" class="gamer-subsection hidden">
+            <h3>Monitor</h3>
+            <div class="item-container">
+                <div class="item" onclick="seleccionarItem(this, 200)">
+                    <img src="monitor_intel.png" alt="Monitor Intel">
+                    <p class="nombre">Monitor Intel</p>
+                    <p class="precio">$200</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="gamer-subsection-10" class="gamer-subsection hidden">
+            <h3>Periféricos</h3>
+            <div class="item-container">
+                <div class="item" onclick="seleccionarItem(this, 150)">
+                    <img src="periferico_intel.png" alt="Periféricos Intel">
+                    <p class="nombre">Periféricos Intel</p>
+                    <p class="precio">$150</p>
+                </div>
+            </div>
+        </div>
+
+        <button id="volver-btn" onclick="mostrarSubcategoriaAnterior()">Atrás</button>
+        <button id="siguiente-btn" onclick="mostrarSiguienteSubcategoria()">Siguiente</button>
+    </div>
+    </div>
+
+    <!-- Precio total -->
+    <p id="precio-gamer-total">Precio total: $0</p>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Need IT. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="JS.js"></script>
+</body>
+</html>

@@ -99,8 +99,20 @@ function mostrarSubcategoriaAnterior() {
         document.getElementById(`gamer-subsection-${subcategoriaActual}`).classList.add('hidden');
         subcategoriaActual--;
         document.getElementById(`gamer-subsection-${subcategoriaActual}`).classList.remove('hidden');
+    } else if (subcategoriaActual === 1) {
+        // Regresar a la sección "pregunta-uso"
+        document.getElementById('gamer-section').classList.add('hidden');
+        document.getElementById('pregunta-uso').classList.remove('hidden');
+        
+        // Reactivar botones de la sección "pregunta-uso"
+        mostrarOpcionesUso();
+
+         // Mostrar botón "volver-carrusel-btn"
+         document.getElementById('volver-carrusel-btn').classList.remove('hidden');
     }
 }
+
+
 
 // Ocultar todas las subcategorías en Gamer
 function ocultarTodasSubcategorias() {
